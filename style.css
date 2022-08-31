@@ -4,11 +4,16 @@ body{
     align-items: center;
     font-size: 5rem;
     font-family: 'Courier New', Courier, monospace;
+    background-color: #e8ecf2;
 }
 .header {
     font-weight: bold;
 }
 
+.turn {
+    font-size: 4rem;
+    height: 100px;
+}
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -26,7 +31,34 @@ body{
     font-size: 10rem;
 }
 
+.container .won{
+    background-color: #dee2e8;
+}
+
 .winner {
     font-size: 3rem;
     padding-top: 30px;
+    height: 80px;
+}
+
+.reset{
+    height: 80px;
+    width: 200px;
+    font-size: 2rem;
+
+    background: #e8ecf2;
+    color: #73787d;
+    border-radius: 50vw;
+    border: 2px solid #e8ecf2;
+
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, .8), 
+        5px 5px 10px rgba(0, 0, 0, .25);
+}
+
+.reset:hover {
+    color: rgb(211, 24, 24);
+    box-shadow: -1px -1px 5px rgba(255, 255, 255, .6), 
+        1px 1px 5px rgba(0, 0, 0, .3),
+        inset -2px -2px 5px rgba(255, 255, 255, .6), 
+        inset 2px 2px 4px rgba(0, 0, 0, .3);
 }
