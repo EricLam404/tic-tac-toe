@@ -22,8 +22,10 @@ const Board = () => {
         let boxNum = e.target.classList[1] - 1;
         board[boxNum] = turn;
         changeTurn();
-        console.log(checkWinner());
         e.target.removeEventListener("click", placeMove);
+        if(checkWinner()){
+            displayWinner(checkWinner());
+        }
     }
 
     function changeTurn(){
@@ -51,6 +53,12 @@ const Board = () => {
         if(board[2] == board[4] && board[2] == board[6]){
             return board[2];
         }
+    }
+
+    function displayWinner(winner){
+        let container = document.querySelector(".winner");
+
+        container.textContent = "The winner is " + winner;
     }
 
     return {board, displayBoard, addOnClick};
