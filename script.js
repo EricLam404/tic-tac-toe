@@ -56,9 +56,16 @@ const Board = () => {
     }
 
     function displayWinner(winner){
+        removeOnClick();
         let container = document.querySelector(".winner");
 
         container.textContent = "The winner is " + winner;
+    }
+
+    function removeOnClick(){
+        boxes.forEach(box => {
+            box.removeEventListener('click', placeMove);
+        });
     }
 
     return {board, displayBoard, addOnClick};
