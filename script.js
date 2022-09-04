@@ -40,6 +40,8 @@ const Board = () => {
         board[boxNum] = turn;
         changeTurn();
         e.target.removeEventListener("click", placeMove)
+        console.log(checkWinner());
+        console.log("C")
         if(checkWinner()){
             displayWinner(checkWinner());
         }
@@ -57,23 +59,25 @@ const Board = () => {
     }
 
     function checkWinner(){
+        console.table(board);
         if(count == 9){
             return "tie";
         }
         for(let i = 0; i < 3; i++){
-            if(board[i] == board[i+3] && board[i] == board[i+6]){
+            if(board[i] == board[i+3] && board[i] == board[i+6] && board[i] != ""){
+                console.log(board[i] + " " + i);
                 return board[i];
             }
         }
         for(let i = 0; i <= 6; i += 3){
-            if(board[i] == board[i+1] && board[i] == board[i+2]){
+            if(board[i] == board[i+1] && board[i] == board[i+2] && board[i] != ""){
                 return board[i];
             }
         }
-        if(board[0] == board[4] && board[0] == board[8]){
+        if(board[0] == board[4] && board[0] == board[8] && board[i] != ""){
             return board[0];
         }
-        if(board[2] == board[4] && board[2] == board[6]){
+        if(board[2] == board[4] && board[2] == board[6] && board[i] != ""){
             return board[2];
         }
         return undefined;
