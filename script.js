@@ -19,7 +19,13 @@ const Board = () => {
         displayBoard();
         addOnClick();
         let display = document.querySelector(".turn");
+        let winner = document.querySelector(".winner");
+        let container = document.querySelector(".container");
         display.textContent = turn + "'s turn";
+        winner.textContent = "";
+        boxes.forEach(box => {
+            box.classList.remove('won');
+        });
     }
 
     const addOnClick = () => {
